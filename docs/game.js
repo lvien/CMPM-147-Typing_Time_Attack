@@ -238,6 +238,7 @@ class TypingGame {
     drawPrompt()
     {
         push();
+        textSize(32);
         if (this.state == 2)
         {
             let prompt = this.parser.getPrompt();
@@ -268,12 +269,12 @@ class TypingGame {
         let offset = 0;
         let correct = this.prompt.substr(0,this.progress);
         offset = textWidth(correct);
-        text(correct,25,this.y+30); //0.75
+        text(correct,25,this.y+40); //0.75
         let incorrect = this.input.substr(this.progress);
         if (this.input.length > this.progress)
             fill("Red");
         incorrect += "^";
-        text(incorrect,25+offset,this.y+30);
+        text(incorrect,25+offset,this.y+40);
         pop();
     }
     drawKeyboard()
